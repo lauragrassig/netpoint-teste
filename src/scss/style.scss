@@ -10,6 +10,8 @@ $c-l-s-b: var(--c-r--p,  #dde3e9);
 $c-d-g-b: var(--c-r--p,  #2f3676);
 $c-l-b-g: var(--c-r--p,  #c5cfd6);
 $c-b:     var(--c-b,     #000000);
+$c-error: var(--c-error, #f59393);
+$c-br-e:  var(--c-br-e,  #f33232);
 
 //*~ F O N T
 $ff-d: "Inter var", sans-serif;
@@ -99,16 +101,28 @@ header {
 
 /* --------------- F O R M U L Á R I O --------------- */
 .wrapper-form {
-  padding: 2rem;
+  .box { padding: 2rem; }
   .fieldset {
     margin-bottom: 1rem;
-   > h2 { font-size: 18px; font-weight: 600; }
+   > h2 { font-size: 18px; font-weight: 700; }
+   textarea {
+    background: #dde3e9;
+    border: 1px solid #2f3676;
+    border-radius: 8px;
+    color: #071723;
+    height: 140px;
+    padding: 16px;
+    resize: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: $ff-d;
+   }
   }
   .stickers { list-style: none; }
   .counter {
     @extend .ds-row;
     input {
-      background: $c-l-s-b;
+      background-color: $c-l-s-b;
       border: 1px solid $c-d-g-b;
       border-radius: 7px;
       font-size: 20px;
@@ -133,6 +147,25 @@ header {
   }
 }
 
+footer {
+  padding: 32px;
+  background: #dde3e9;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    cursor: pointer;
+    appearance: none;
+    background: #2f3676;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 32px;
+  }
+}
 //*~ C H E C K B O X  P E R S O N A L I Z A D O
 .input-style {
   position: absolute;
