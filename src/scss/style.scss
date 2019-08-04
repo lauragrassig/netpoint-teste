@@ -9,9 +9,42 @@ $c-v-l-p: var(--c-r--p,  #f2f2f2);
 $c-l-s-b: var(--c-r--p,  #dde3e9);
 $c-d-g-b: var(--c-r--p,  #2f3676);
 $c-l-b-g: var(--c-r--p,  #c5cfd6);
+$c-b:     var(--c-b,     #000000);
 
 //*~ F O N T
 $ff-d: "Inter var", sans-serif;
+
+//*~ P O S I C I O N A M E N T O
+.ds-collum {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ds-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.ds-none {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+    @media (min-width: 576px) { max-width: 540px; }
+    @media (min-width: 768px) { max-width: 720px; }
+    @media (min-width: 992px) { max-width: 960px; }
+    @media (min-width: 1200px) { max-width: 1140px; }
+}
 
 /* --------------- B O D Y --------------- */
 @import url("https://rsms.me/inter/inter.css");
@@ -43,4 +76,116 @@ body {
   margin: 20px auto;
   overflow: hidden;
   width: 550px;
+}
+
+/* --------------- H E A D E R --------------- */
+header {
+  background: url(../assets/images/header.png) center right no-repeat;
+  background-size: cover;
+  height: 187px;
+  padding: 23px 36px;
+  width: 100%;
+  .title {
+    @extend .ds-collum;
+    color: $c-w;
+    height: 100%;
+    font-size: 23px;
+    font-weight: 300;
+    > span { font-size: 1.4rem; font-weight: unset; line-height: 2rem;
+      &:last-child { font-weight: 700;}
+    }
+  }
+}
+
+/* --------------- F O R M U L Á R I O --------------- */
+.wrapper-form {
+  padding: 2rem;
+  .fieldset {
+    margin-bottom: 1rem;
+   > h2 { font-size: 18px; font-weight: 600; }
+  }
+  .stickers { list-style: none; }
+  .counter {
+    @extend .ds-row;
+    input {
+      background: $c-l-s-b;
+      border: 1px solid $c-d-g-b;
+      border-radius: 7px;
+      font-size: 20px;
+      font-weight: 900;
+      margin: 0 8px;
+      width: 60px;
+      color: $c-b;
+      text-align: center;
+    }
+    .btn-counter {
+      cursor: pointer;
+      @extend .ds-none;
+      svg { fill: $c-d-g-b; transition: .2s ease; }
+      &:hover {
+        svg { fill: $c-d-b-g; }
+      }
+      &:disabled {
+        cursor: initial;
+        svg { fill: $c-l-b-g; }
+      }
+    }
+  }
+}
+
+//*~ C H E C K B O X  P E R S O N A L I Z A D O
+.input-style {
+  position: absolute;
+  opacity: 0;
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+  //*~ B O X
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: $c-d-g-b;
+    border-radius: .2rem;
+    transition: .2s ease;
+  }
+  //*~ H O V E R
+  &:hover + label:before {
+    background: $c-d-b-g;
+  }
+  //*~ C H E C K E D
+  &:checked + label:before {
+    background: $c-d-g-b;
+  }
+  //*~ D I S A B L E
+  &:disabled + label:before {
+    box-shadow: none;
+    background: $c-l-b-g;
+  }
+  //*~ C H E C K M A R K
+  &:checked + label:after {
+    content: '';
+    background: $c-w;
+    width: 3px;
+    height: 3px;
+    left: 5px;
+    top: 14px;
+    position: absolute;
+    box-shadow: 
+      2px 0 0 $c-w,
+      4px 0 0 $c-w,
+      4px -2px 0 $c-w,
+      4px -4px 0 $c-w,
+      4px -6px 0 $c-w,
+      4px -8px 0 $c-w;
+    transform: rotate(45deg);
+  }
 }

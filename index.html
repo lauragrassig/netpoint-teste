@@ -11,15 +11,50 @@
 	<!-- ** ~ C S S  ~ ** -->
 	<link rel="stylesheet" href="src/css/style.css">
 </head>
-
 <body>
-	<div class="wrapper-box">
-		<header>
-			<h1>Formulário<br />para compra de<br /><span>Pacote de Stickers</span></h1>
-		</header>
-		<form action="">
-			
-		</form>
+	<div class="container">
+		<div class="wrapper-box">
+			<header class="header">
+				<div class="title">
+					<span>Formulário</span>
+					<span>para compra de</span>
+					<span>Pacote de Stickers</span>
+				</div>
+			</header>
+			<form class="wrapper-form">
+				<div class="fieldset">
+					<h2>Quais stickers?</h2>
+					<ul>
+						<li class="stickers">
+							<input class="input-style" id="input-style-1" type="checkbox" value="value1">
+							<label for="input-style-1">React</label>
+						</li>
+						<li class="stickers">
+							<input class="input-style" id="input-style-2" type="checkbox" value="value1">
+							<label for="input-style-2">Vue</label>
+						</li>
+						<li class="stickers">
+							<input class="input-style" id="input-style-3" type="checkbox" value="value1">
+							<label for="input-style-3">Angular</label>
+						</li>
+					</ul>
+				</div>
+				<div class="fieldset">
+					<h2>Quantos stickers de cada?</h2>
+					<div class="counter">
+						<button class="btn-counter">
+							<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+								<path d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z" /></svg>
+						</button>
+						<input type="text" placeholder="0" />
+						<button class="btn-counter">
+							<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+								<path d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z" /></svg>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 

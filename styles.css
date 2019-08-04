@@ -43,25 +43,25 @@ body {
   font-weight: 600;
 }
 
-.header {
+/* .header {
   background: url(images/header.png) center right no-repeat;
   background-size: cover;
   height: 187px;
   padding: 23px 36px;
   width: 100%;
-}
+} */
 
-.header .title {
+/* .header .title {
   color: #fff;
   font-size: 23px;
   font-weight: 300;
-}
+} */
 
-.header .title span {
+/* .header .title span {
   font-weight: bold;
   font-size: 24px;
   line-height: 1.46;
-}
+} */
 
 .form textarea {
   background: #dde3e9;
@@ -75,9 +75,9 @@ body {
   font-size: 14px;
 }
 
-.fieldset {
+/* .fieldset {
   padding: 0 32px;
-}
+} */
 
 .counter svg {
   fill: #2f3676;
