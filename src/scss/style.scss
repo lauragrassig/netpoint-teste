@@ -1,0 +1,46 @@
+/* --------------- V A R I A B L E S --------------- */
+//*~ C O L O R S
+$c-w:     var(--c-white, #ffffff);
+$c-r-p:   var(--c-r--p,  #663399);
+$c-d-b-g: var(--c-r--p,  #191847);
+$c-g-b:   var(--c-r--p,  #555555);
+$c-p-g:   var(--c-r--p,  #071723);
+$c-v-l-p: var(--c-r--p,  #f2f2f2);
+$c-l-s-b: var(--c-r--p,  #dde3e9);
+$c-d-g-b: var(--c-r--p,  #2f3676);
+$c-l-b-g: var(--c-r--p,  #c5cfd6);
+
+//*~ F O N T
+$ff-d: "Inter var", sans-serif;
+
+/* --------------- B O D Y --------------- */
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: $ff-d;
+}
+
+@supports (font-variation-settings: normal) {
+  html { font-family: $ff-d; }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $c-r-p;
+  color:$c-p-g ;
+}
+
+//*~ B O X
+.wrapper-box {
+  background-color: $c-v-l-p;
+  border-radius: 8px;
+  box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  overflow: hidden;
+  width: 550px;
+}
