@@ -48,6 +48,23 @@ $ff-d: "Inter var", sans-serif;
     @media (min-width: 1200px) { max-width: 1140px; }
 }
 
+/* --------------- S T A T U S --------------- */
+//*~ H O V E R
+.st-hover {
+  background: $c-d-b-g;
+}
+
+//*~ F O C U S
+.st-focus {
+  box-shadow: 0 0 0 3px rgba(18, 134, 255, 0.41);
+}
+
+//*~ D I S A B L E D
+.st-disabled {
+  box-shadow: none;
+  background: $c-l-b-g;
+}
+
 /* --------------- B O D Y --------------- */
 @import url("https://rsms.me/inter/inter.css");
 
@@ -93,7 +110,7 @@ header {
     height: 100%;
     font-size: 23px;
     font-weight: 300;
-    > span { font-size: 1.4rem; font-weight: unset; line-height: 2rem;
+    > h1 { font-size: 1.4rem; font-weight: unset; line-height: 2rem;
       &:last-child { font-weight: 700;}
     }
   }
@@ -102,12 +119,13 @@ header {
 /* --------------- F O R M U L Á R I O --------------- */
 .wrapper-form {
   .box { padding: 2rem; }
-  .fieldset {
+  fieldset {
     margin-bottom: 1rem;
+    border: none;
    > h2 { font-size: 18px; font-weight: 700; }
    textarea {
-    background: #dde3e9;
-    border: 1px solid #2f3676;
+    background: $c-l-s-b;
+    border: 1px solid $c-d-g-b;
     border-radius: 8px;
     color: #071723;
     height: 140px;
@@ -116,6 +134,7 @@ header {
     width: 100%;
     font-size: 14px;
     font-family: $ff-d;
+    &:focus { @extend .st-focus; }
    }
   }
   .stickers { list-style: none; }
@@ -131,14 +150,14 @@ header {
       width: 60px;
       color: $c-b;
       text-align: center;
+      &:focus { @extend .st-focus; }
     }
     .btn-counter {
       cursor: pointer;
       @extend .ds-none;
       svg { fill: $c-d-g-b; transition: .2s ease; }
-      &:hover {
-        svg { fill: $c-d-b-g; }
-      }
+      &:hover { svg { fill: $c-d-b-g; } }
+      &:focus { @extend .st-focus; }
       &:disabled {
         cursor: initial;
         svg { fill: $c-l-b-g; }
@@ -149,21 +168,22 @@ header {
 
 footer {
   padding: 32px;
-  background: #dde3e9;
+  background: $c-l-s-b;
   display: flex;
   justify-content: flex-end;
   button {
     cursor: pointer;
     appearance: none;
-    background: #2f3676;
+    background: $c-d-g-b;
     border: 0;
     border-radius: 8px;
-    color: #fff;
+    color: $c-w;
     padding: 10px;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
     padding: 8px 32px;
+    &:focus { @extend .st-focus; }
   }
 }
 //*~ C H E C K B O X  P E R S O N A L I Z A D O
@@ -190,20 +210,11 @@ footer {
     border-radius: .2rem;
     transition: .2s ease;
   }
-  //*~ H O V E R
-  &:hover + label:before {
-    background: $c-d-b-g;
-  }
-  //*~ C H E C K E D
-  &:checked + label:before {
-    background: $c-d-g-b;
-  }
-  //*~ D I S A B L E
-  &:disabled + label:before {
-    box-shadow: none;
-    background: $c-l-b-g;
-  }
+  &:hover + label:before { @extend .st-hover; }
+  &:focus + label:before { @extend .st-focus; }
+  &:disabled + label:before { @extend .st-disabled; }
   //*~ C H E C K M A R K
+  &:checked + label:before { background: $c-d-g-b; }
   &:checked + label:after {
     content: '';
     background: $c-w;

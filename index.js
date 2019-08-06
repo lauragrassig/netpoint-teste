@@ -8,14 +8,9 @@ $(".btn-counter").click(function () {
     $qtdSticker.val(parseInt($qtdSticker.val()) -1);
 })
 
-$('#enviar').bind('click', function() {
+
+// VALIDAÇÃO
+$('#enviar').click(function() {
   if( $(".input-style").is(":checked") == false )
     window.alert('Por favor preencha corretamente os campos');
-
-    return false;
 });
-
-// $("#testForm").submit(function() {
-//   /* Do Something */
-
-// });
