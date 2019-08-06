@@ -183,7 +183,9 @@ footer {
     text-transform: uppercase;
     font-weight: bold;
     padding: 8px 32px;
+    transition: .5s ease;
     &:focus { @extend .st-focus; }
+    &:hover { @extend .st-hover; }
   }
 }
 //*~ C H E C K B O X  P E R S O N A L I Z A D O
